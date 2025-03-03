@@ -140,7 +140,12 @@ public class ChatOptionList
 
     public void Clear() => options.Clear();
 
-    public void AddOption(string key, string value) => options.Add(new ChatOption(key, value));
+    public ChatOption AddOption(string key, string value)
+    {
+        ChatOption newOption = new(key, value);
+        options.Add(newOption);
+        return newOption;
+    }
 
     public void RemoveOption(string key)
     {

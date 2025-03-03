@@ -12,6 +12,7 @@ public class DialogueEngine : MonoBehaviour
     [HeaderImproved("UI Components", 16, "#16fc63", "#101010")]
     public GameObject uiPanel;
     public TextMeshProUGUI uiDisplayText;
+    public TextMeshProUGUI speakerNameText;
     public GameObject optionsHolder;
     public GameObject optionPrefab;
 
@@ -40,6 +41,8 @@ public class DialogueEngine : MonoBehaviour
         conversationData = data;
         conversationData.FullMessage = "";
         currentCharacter = LocateCharacter(data.SpeakerName);
+        if (conversationData.SpeakerName != null)
+            speakerNameText.text = conversationData.SpeakerName;
         ActivateCharacter(currentCharacter);
         conversationCoroutine = StartCoroutine(RunDialogue());
     }
@@ -56,7 +59,8 @@ public class DialogueEngine : MonoBehaviour
 
     public void SelectOption(int index)
     {
-        conversationData.FullMessage = conversationData.Options.GetOption(index).Key;
+        var selectedOption = conversationData.Options.GetOption(index);
+        conversationData.FullMessage = selectedOption.Key;
         TerminateDialogue();
     }
 
@@ -172,6 +176,7 @@ public class DialogueEngine : MonoBehaviour
     #endregion
 
     #region Helpers
+
     private void InitializeUI()
     {
         currentDelay = baseDelay;
