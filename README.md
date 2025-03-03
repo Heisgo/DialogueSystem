@@ -1,9 +1,9 @@
 # DialogueSystem for Unity
 A centralized dialogue system designed for Unity games that streamlines interactive narrative creation with customizable commands and branching dialogues
------------------------
+
 ## Overview
 This project implements a robust dialogue system where all interactions are managed centrally. Built around a singleton-based DialogueManager, the system loads and controls dialogue sequences for various characters or NPCs, allowing you to create engaging and dynamic story-driven experiences
------------------------
+
 ## Features
 ### Centralized Management:
 Organize all dialogue sequences in one place for easy maintenance and scalability.
@@ -19,10 +19,10 @@ Easily add new dialogues or characters. The system is designed to be modular, ma
 
 ### Lightweight Integration:
 Simple to set up in any Unity project with minimal configuration required.
------------------------
+
 ## How to Install?
 Just drag & drop the unitypackage file to your project.
------------------------
+
 ## Usage
 **Triggering Dialogues:**
 Use input events or game triggers to start dialogues. For example, pressing the "E" key can initiate a dialogue sequence associated with a specific character:
